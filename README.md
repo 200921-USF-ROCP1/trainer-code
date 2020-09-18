@@ -47,6 +47,6 @@ When installing Git, you will thank yourself later if you choose another text ed
 - [Get Git for Windows here.](https://gitforwindows.org/)
   - [Install Git for Mac](https://git-scm.com/download/mac)
   - [Install Git for Linux](https://git-scm.com/download/linux#:~:text=Download%20for%20Linux%20and%20Unix.%201%20Debian%2FUbuntu.%20For,dev-vcs%2Fgit.%204%20Arch%20Linux.%205%20openSUSE.%20More%20items)
-- {[Create a GitHub account here.](https://github.com/)
+- [Create a GitHub account here.](https://github.com/)
 
 Once you have created a GitHub account, please **add your GitHub username to your RevPro account**. Once you've done this, I will be able to add you to our GitHub Organization, which gives us a common place to store our codebases so that we can all see what everyone else has written and fuel collaboration. Note that the repository that this Readme is in is a part of said Organization.
