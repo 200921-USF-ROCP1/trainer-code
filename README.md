@@ -24,7 +24,7 @@ For Java, I will be using [Spring Tools 4 for Eclipse](https://spring.io/tools),
 
 Once you have the JDK and an IDE, you have the basics!
 
-## DBeaver
+### DBeaver
 DBeaver is database management software that I will be using for interacting with and modifying a remote database starting Week 2. You will want to download and install this, but you don't need to do anything else with it yet.
 
 [Get it here.](https://dbeaver.io/)
