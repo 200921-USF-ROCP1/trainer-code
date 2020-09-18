@@ -34,8 +34,15 @@ Apache Tomcat 9 is a web server that we will be using to test our very own serve
 
 [Get it here.](https://tomcat.apache.org/download-90.cgi)
 
+### VSCode (optional)
+VSCode is an increasingly popular, highly extensible, and lightweight IDE that can be used for almost any form of development. I won't use it for Java, but you may see me open it for non-Java work, such as SQL scripts in Week 2 and HTML in Week 3.
+
+[Get it here.](https://code.visualstudio.com/)
+
 ### Git and GitHub
 The last tool you will need is Git. Git is a version control and source code management system (VCS and SCM) and is incredibly popular in the industry. One of our goals in this program is to learn and become familiar with it. However, by itselg, Git doesn't provide online hosting for your code. This is what GitHub is for.
+
+When installing Git, you will thank yourself later if you choose another text editor, like VSCode if you installed it, to use instead of Vim or Nano.
 
 - [Get Git for Windows here.](https://gitforwindows.org/)
   - [Install Git for Mac](https://git-scm.com/download/mac)
