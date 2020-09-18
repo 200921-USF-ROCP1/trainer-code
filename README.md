@@ -33,3 +33,13 @@ DBeaver is database management software that I will be using for interacting wit
 Apache Tomcat 9 is a web server that we will be using to test our very own server software that we will build in Week 3. When you download it, you will get a compressed file. You only need to uncompress this file somewhere and remember where that is; come Week 3, I will discuss configuring Spring Tools 4 to host a web server via Tomcat.
 
 [Get it here.](https://tomcat.apache.org/download-90.cgi)
+
+### Git and GitHub
+The last tool you will need is Git. Git is a version control and source code management system (VCS and SCM) and is incredibly popular in the industry. One of our goals in this program is to learn and become familiar with it. However, by itselg, Git doesn't provide online hosting for your code. This is what GitHub is for.
+
+- [Get Git for Windows here.](https://gitforwindows.org/)
+  - [Install Git for Mac](https://git-scm.com/download/mac)
+  - [Install Git for Linux](https://git-scm.com/download/linux#:~:text=Download%20for%20Linux%20and%20Unix.%201%20Debian%2FUbuntu.%20For,dev-vcs%2Fgit.%204%20Arch%20Linux.%205%20openSUSE.%20More%20items)
+- {[Create a GitHub account here.](https://github.com/)
+
+Once you have created a GitHub account, please **add your GitHub username to your RevPro account**. Once you've done this, I will be able to add you to our GitHub Organization, which gives us a common place to store our codebases so that we can all see what everyone else has written and fuel collaboration. Note that the repository that this Readme is in is a part of said Organization.
