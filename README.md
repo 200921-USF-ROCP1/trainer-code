@@ -6,12 +6,12 @@ Hello and welcome! In this guide you will find information on the tools we will 
 ## Tools
 
 ### Java
-To get Java for development, you must first visit Orcle's website and install the JDK. We will focus on Java 8, but feel free to install the most recent form of Java as well. Some things may be different than what we will discuss, but that can only be healthy discussion!
+To get Java for development, you must first visit Oracle's website and install the JDK. We will focus on Java 8, but feel free to install the most recent form of Java as well. Some things may be different in Java 15 than what we will discuss, but that can only be healthy discussion!
 - [Java 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 - [Java 15 (latest)](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html)
 
 You may also need to add the JDK to your PATH environment variable. Please visit one of the following sources for a quick explanation:
-- [Java SE 15 Install Guide (will help wit 8 too)](https://docs.oracle.com/en/java/javase/15/install/installation-jdk-microsoft-windows-platforms.html#GUID-96EB3876-8C7A-4A25-9F3A-A2983FEC016A)
+- [Java SE 15 Install Guide (will help with 8 too)](https://docs.oracle.com/en/java/javase/15/install/installation-jdk-microsoft-windows-platforms.html#GUID-96EB3876-8C7A-4A25-9F3A-A2983FEC016A)
 - [Alt Source 1](https://www.poftut.com/how-to-set-java-jre-and-jdk-home-path-and-environment-variables-on-windows/)
 - [Alt Source 2](https://kingluddite.com/tools/how-do-i-add-java-to-my-windows-path)
 
