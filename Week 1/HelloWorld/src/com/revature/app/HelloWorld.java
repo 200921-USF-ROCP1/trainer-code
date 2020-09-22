@@ -8,8 +8,8 @@ public class HelloWorld {
 	// void - The return type. Void  means the method returns nothing.
 	// String[] args - A parameter. Is an array of Strings
 	public static void main(String[] args) {
-		Jacob j;
-		
+		Jacob j = new Jacob();
+
 		System.out.println("Hello world!");
 	}
 }
