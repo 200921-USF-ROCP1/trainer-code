@@ -11,7 +11,7 @@ public class Driver {
 		Inheritance parentRef = new ChildOfInheritance("Jimmy", 1);
 		ChildOfInheritance childRef = (ChildOfInheritance)parentRef;
 		
-		
+		doMath(1, 1, new AbstractionImpl());
 	}
 	
 	public static void doTheThing(Inheritance in) {
