@@ -18,9 +18,11 @@ public class Constructors {
 		this.bool = bool;
 	}
 	
-	// Java favors the most specific scope!
+	// Java favors the most specific scope for parameters!
 	// Class scope
 	// Method scope
+	// There is also Block scope, but you can't redefine a variable 
+	// in Block scope like you can in Method scope
 	
 	// i here overshadows the class' i
 	public void scopes(int i) {
