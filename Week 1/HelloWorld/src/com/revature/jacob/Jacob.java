@@ -70,7 +70,7 @@ public class Jacob {
 		this.bool = bool;
 	}
 	
-	// Java favors the most specifc scope!
+	// Java favors the most specific scope!
 	// Class scope
 	// Method scope
 	
@@ -110,18 +110,16 @@ public class Jacob {
 		}
 		
 		// ++i is precrement: increment the value, then resolve the statement
-		// i++ is post-crememnt: resolve the statement, then increment the value
+		// i++ is post-cremement: resolve the statement, then increment the value
 		for ( ; val++ < 5; ) { } // Compare val and 5, then increment val
 		for ( ; ++val < 5; ) { } // Increment val, and then compare val and 5
 		
 		while (yes) {
 			// Do something repeatedly while yes is true
-			break;
 		}
 		
 		do {
 			// Run once, and THEN run for as long yes is true
-			break;
 		} while (yes);
 		
 		switch (val) {
