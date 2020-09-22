@@ -22,7 +22,7 @@ public class Driver {
 	
 	/*
 	 * Calculate should:
-	 * 1. Take input
+	 * 1. Take input via the Scanner class
 	 * 2. Parse the input (this is a part of the Calculator interface)
 	 * 3. If it is valid input, output the result
 	 * 4. If it is invalid, output an error
