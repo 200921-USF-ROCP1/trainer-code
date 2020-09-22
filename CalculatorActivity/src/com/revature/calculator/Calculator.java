@@ -18,5 +18,7 @@ public interface Calculator {
 	public int fibonacci(int i);
 	
 	// Parse a String into parameters and an operation
+	// eg, given "5 + 2", return add(5, 2)
+	// Look into String.parse()
 	public int parse(String s);
 }
