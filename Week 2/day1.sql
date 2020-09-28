@@ -10,7 +10,7 @@ create table test_Table (
 -- Use references othertable(columnname) for foreign key!
 create table foreign_key_table (
 	id numeric primary key,
-	other_id varchar(60) references test_table(name);
+	other_id varchar(60) references test_table(name)
 );
 
 -- I need to put data into my table!
