@@ -1,36 +1,78 @@
-select * from residents;
+-- I want many accounts to be held many users and vice versa
 
--- DML
--- update
-update residents -- update some table
-	set last_name = 'Sillyson' -- new values for columns
-	where id = 1 -- given the set of columns that matches this condition
-	
-insert into apartments values
-  (1, 'A', 1, 1250), 
-  (2, 'B', 1, 1300),
-  (3, 'C', 1, 1500),
-  (4, 'C', 2, 1400);
-	
--- delete
-delete from residents -- delete rows from a table
-	where id = 4 -- I could delete given some condition
+-- How can I do that?
 
--- truncate
-truncate residents; -- Deletes all of the rows, but not the table
-	
--- DDL
--- create
-create table my_table (
-	some_column numeric(1, 0) -- Columns go: column_name data_type and are comma-delimited
+-- I can have a one to many relationship: one account to many users
+create table users ( 
+	id serial,
+	username varchar(60),
+	password varchar(60),
+	references accounts(id)
 );
 
--- drop
-drop residents; -- Outright deletes the table and all of its data
+create table accounts (
+	id serial,
+	account_balance
+);
 
--- alter
-alter table residents drop column last_name;
-alter table residents add column last_name varchar(60);
-alter table residents alter column first_name set not null; -- use set to add restrictions other restrictions include unique
-alter table residents alter column first_name drop not null; -- use drop to get rid of restrictions
-alter table cars drop constraint cars_owner_id_fkey; -- to drop a foreign key, find its name and use drop constraint
+-- I can have a one to many relationship: one user to many accounts
+create table users ( 
+	id serial,
+	username varchar(60),
+	password varchar(60)
+);
+
+create table accounts (
+	id serial,
+	account_balance numeric,
+	user_id references users(id)
+);
+
+
+-- So how can we get many users to many accounts?
+
+
+-- Many to many relationship
+
+drop table users_accounts;
+drop table accounts;
+drop table users;
+
+create table users ( 
+	id serial primary key,
+	username varchar(60),
+	password varchar(60)
+);
+
+create table accounts (
+	id serial primary key,
+	account_balance numeric
+);
+
+create table users_accounts (
+	user_id serial references users(id),
+	account_id serial references accounts(id)
+);
+
+-- Test data
+insert into users (username, password) values
+	('jacobd', 'password'),
+	('otherguy', 'password');
+
+insert into accounts (account_balance) values
+	(1500),
+	(1200),
+	(30000);
+
+insert into users_accounts values 
+	(1, 1), -- user 1 owns account 1
+	(2, 2), -- user 2 owns account 2
+	(1, 3),
+	(2, 3);
+
+-- find all users that have ownership of account 3
+select users.*, accounts.* from users 
+	left join users_accounts on users.id = users_accounts.user_id
+	left join accounts on users_accounts.account_id = accounts.id
+	where accounts.id = 3;
+	
