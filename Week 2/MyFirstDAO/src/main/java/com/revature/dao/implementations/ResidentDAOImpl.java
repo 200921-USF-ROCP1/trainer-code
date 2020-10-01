@@ -23,12 +23,49 @@ public class ResidentDAOImpl implements ResidentDAO {
 	
 	public void createResident(Resident resident) {
 		try {
-			Statement stmt = connection.createStatement();
+			/*Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO residents (first_name, last_name, apartment_id) VALUES ('" 
 					+ resident.getFirstName() + "', '" + resident.getLastName() + "', " 
-					+ resident.getApartment().getId() + ");");
+					+ resident.getApartment().getId() + ");");*/
 			
 			// We may want to check that the Apartment exists in the Apartment table
+			/*
+			 * 1. We check if the apartment exists. If it doesnt, we add it (this would normally be done via apartment dao)
+			 * 2. If we insert that apartment, grab its key
+			 * 3. Finally, insert Resident object
+			 */
+			
+			// I need check to check if the Apartment exists
+			if (resident.getApartment() != null) {
+				PreparedStatement ps = connection.prepareStatement("SELECT * FROM apartments WHERE id = ?");
+				ps.setInt(1, resident.getApartment().getId());
+				
+				ResultSet rs = ps.executeQuery();
+				if (!rs.next()) {
+					// If there's no rows in the ResultSet, we have to create the apartment
+					// apartmentDao.createApartment(resident.getApartment());
+					
+					PreparedStatement apartmentStatement = connection.prepareStatement("INSERT INTO apartments "
+							+ "(building_letter, room_number, monthly_rent) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+					apartmentStatement.setString(1, resident.getApartment().getBuildingLetter());
+					apartmentStatement.setInt(2, resident.getApartment().getRoomNumber());
+					apartmentStatement.setDouble(3, resident.getApartment().getMonthlyRent());
+					apartmentStatement.executeUpdate();
+					
+					// Get the generated keys ResultSet
+					ResultSet keys = apartmentStatement.getGeneratedKeys();
+					keys.next();
+					resident.getApartment().setId(keys.getInt(1));
+				}
+			}
+			
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO residents (first_name, last_name, apartment_id) "
+					+ "VALUES (?, ?, ?)");
+			ps.setString(1, resident.getFirstName());
+			ps.setString(2, resident.getLastName());
+			ps.setInt(3, resident.getApartment().getId());
+			
+			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
