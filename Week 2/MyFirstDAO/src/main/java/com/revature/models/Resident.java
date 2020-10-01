@@ -4,7 +4,9 @@ public class Resident {
 	private int id;
 	private String firstName;
 	private String lastName;
-	private int apartmentId;
+	
+	// Navigation property
+	private Apartment apartment;
 	
 	public int getId() {
 		return id;
@@ -24,10 +26,10 @@ public class Resident {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public int getApartmentId() {
-		return apartmentId;
+	public Apartment getApartment() {
+		return apartment;
 	}
-	public void setApartmentId(int apartmentId) {
-		this.apartmentId = apartmentId;
+	public void setApartment(Apartment apartment) {
+		this.apartment = apartment;
 	}
 }
