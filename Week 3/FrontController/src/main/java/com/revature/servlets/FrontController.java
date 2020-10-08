@@ -17,8 +17,11 @@ public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = request.getRequestURI(); // /FrontController/MyServlet/1
+		String path = request.getRequestURI(); // /FrontController/MyServlet/1?search=hello&id=9&age=17
 		String[] parts = path.split("/"); // [ "", "FrontController", "MyServlet", "1"]
+		
+		request.getQueryString(); // search=hello&id=9&age=17
+		String[] queryParameters = request.getQueryString().split("&");
 		
 		// /cars/:id, /users/:id. I want to call CarDAOImpl.get(id) for one, and userDAOImpl.get(id) for the other
 		switch (parts[2]) {

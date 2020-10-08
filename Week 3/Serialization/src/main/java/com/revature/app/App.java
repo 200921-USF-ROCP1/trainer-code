@@ -13,7 +13,7 @@ import com.revature.classes.XmlClass;
 
 public class App {
 	public static void main(String[] args) {
-		//xmlMethod();
+		xmlMethod();
 		jsonMethod();
 	}
 	
