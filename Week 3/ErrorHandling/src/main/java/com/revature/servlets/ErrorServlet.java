@@ -15,7 +15,6 @@ public class ErrorServlet extends HttpServlet {
 	      
 	      // Do error stuff here!
 	      int statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
-	      String exceptionType = ((Class) request.getAttribute("javax.servlet.error.exception_type")).toString();
 	      Exception exception = (Exception) request.getAttribute("javax.servlet.error.exception");
 	      String requestUri = (String) request.getAttribute("javax.servlet.error.request_uri");
 	      
@@ -24,6 +23,8 @@ public class ErrorServlet extends HttpServlet {
 	      pw.print("<html><body>");
 	      
 	      if (exception != null) {
+	    	  String exceptionType = ((Class) request.getAttribute("javax.servlet.error.exception_type")).toString();
+	    	  
 	    	  pw.println("<p>Exception type: " + exceptionType + "</p>");
 	    	  pw.println("<p>Exception message: " + exception.getMessage() + "</p>");
 	    	  
